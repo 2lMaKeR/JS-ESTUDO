@@ -1,0 +1,230 @@
+<h1>Aprendendo HTML gostosin</h1>
+leia os comentários -- 
+
+<!-- (h1) adiona título ou deixa o texto 
+    grandão-->
+
+<!-- assim se escreve comentários que não 
+    aparecem no preview é só colocar 
+    (<) + (!) + (--) = comentários -->
+
+<!-- o img adiciona imagens a página
+    sendo o (src) o nome do arquivo que ele 
+    irá puxar e (alt) a descrição da imagem 
+    antes de carregar -->
+    <img src="lolo.jpg" alt="lolo.png">
+
+<!-- o input adiciona a marcação tornando
+    ela onde podemos introduzir o texto no 
+    preview, como uma barra de pesquisa sem 
+    pesquisa e colocar disable antes do (>) e 
+    depois das apas desabilita a escritura -->
+    <input type="text">
+
+<!--  usar aspas para a separeção dos 
+    produtos, em geral principalmente no 
+    inglês usar (") aspas duplas, mas uma 
+    também serve para fazer a separação, 
+    embora não seja indicado principalmente 
+    deixar o elemento solto sem aspas-->
+
+<!-- utilização para identificação de 
+    produtos e classificação, usar (class)
+    e (id), sendo que class pode repetir o 
+    mesmo nome pois abrange um grupo, já id 
+    é uma indentificação unitária, sendo 
+    somente para aquele produto -->
+
+<!-- desta forma pode se colocar 
+    (contentditable) conteúdo editável
+    para fazer edições no preview naquele local
+    assim complementando a barra de pesquisa que 
+    tinhamos visto, mas para isso ocorrer colocar 
+    dentro das aspas (true) ou (false) para abrir 
+    e fechar a edição -->
+
+<!-- (hidden) é utilizado para esconder para 
+    esconder o conteúdo-->
+
+<!-- (style) é utilizado para estilizar o 
+    conteúdo, entre eles mudar a cor-->
+
+<div  class="carrinho" contenteditable="true" 
+style="color:aqua" >
+editavel
+</div>
+
+<div data-id="maçaroca" hidden>
+ratata
+</div>
+
+<!-- (tabindex) apertando o tem muda a 
+    orientação e direção conforma estipulado 
+    pelo comando-->
+
+<div tabindex="1">vai pro 1</div>
+<div tabindex="2">vai pro 3</div>
+<div tabindex="3">vai pro 2</div>
+
+<!-- (title) adiciona uma especificação para
+    o conteudo -->
+
+<div title="otário">coloca o mouse em cima</div>
+
+<h1>----------------------------------------------</h1>
+
+<!-- (p) é utilizado para definir parágrafos-->
+
+<p>escreve vários <br> texto e PÁ</p>
+<p><em><strong>parágrafo</strong></em></p>
+
+<!-- (em) deixa o texto em itálico-->
+<!-- (br) quebra a linha de escrita-->
+<!-- (strong) ou (b) deixa o texto em negrito-->
+<!-- (a) adiciona links a página-->
+
+<p> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+<a href="https://google.com.br">link</a></p> 
+
+<!-- (&nbsp;) adiciona espaços entre o texto-->
+<!-- (&) sempre para usar caracteres especiais-->
+
+<h1>----------------------------------------------</h1>
+
+<!-- (!DOCTYPE html) serve para o navegador 
+    entender que iremos utilizar html na 
+    programação do mesmo -->
+<!-- (html) é utilizado como iniciador para ser
+a raiz do produto -->
+<!-- (head) é utilizado para definir o que será 
+    a pagina inserindo informações-->
+<!-- (body) é utilizado para mostrar o corpo da
+    página mostrando o que a dentro -->
+<!-- (lang) é utilizado para definir o idioma do 
+    site-->
+<!-- (! + enter) monta toda a estrutura do site
+adicionando o doctype, html, head e body-->
+
+<html><head><title> Nova Aba</title></head></html>
+
+<!-- (h)s são usados para dar títulos e subtítulos
+para a página-->
+
+<!-- (li) serve para fazer listas -->
+<!-- (ol) serve para fazer listas ordenadas-->
+<!-- (ul) reposiciona para um comentário na 
+    página-->
+
+<h2>Ingredientes</h2>
+<ul><ol>
+    <li>Macarrão</li>
+    <li>Molho</li>
+    <li>Tomate</li>
+    <li>500g de carne moída</li>
+    <li>Salsa</li>
+</ol></ul>
+
+<!-- (blockquote) produz citações-->
+<!-- (q) usado para citações curtas 
+    que não precisam de parágrafo-->
+
+<blockquote>
+<q>Informações retiradas da coluna científica de 
+<a href="https://www.google.com.br">HARVARD</a></q>
+</blockquote>
+
+<!-- (abbr) usado para mostrar o significado de
+abreviações -->
+
+<abbr title="League of Legends">LOL</abbr> é 
+o jogo com mais cornos cadastrados;
+<p>diz estudo de 
+<a href="https://www.google.com.br">minha rola</a>
+</p>
+
+<!-- (address) usado para detalhar o contato 
+da pessoa-->
+
+<address>MaKeR Gamer</address>
+
+<!-- (dl) marcar um conjunto de itens -->
+<!-- (dt) dar uma descrição a eles -->
+<!-- (dd) e aprofundar essa descrição-->
+
+<!-- (code) partes genéricas de um código -->
+<!-- (pre) blocos de código, mantendo os 
+    espaços em branco e recuos que são feitos 
+    no código -->
+
+<!-- (div) cria caixas de texto -->
+<!-- (span) é usado para dar uma separação no
+texto sem apresentar no preview -->
+
+<h1>--------------------------------------------</h1>
+
+<!-- (target) + (_blank) fazem o navegador abrir 
+    uma nova aba quando abrir o link ao invés de 
+    redirecionar o usuário sobre a mesma página-->
+
+<ul>
+    <li><a href="https://www.google.com.br"target="_blank">google</a></li>
+    <li><a href="neoswar999@gmail.com">Email</a></li>
+</ul>
+
+<!-- (email) colocando como "nome" do link,
+    ele irá abrir o app de email do computador
+    para facilitar a utilização do usuário-->
+<!-- (telefone) da mesma forma, colocando este
+    como nome, (tendo cadastrado o telefone no
+    navegador irá iniciar uma chamada com o 
+    número)-->
+
+<h3>O que você procura:</h3>
+<ul>
+    <li><a href="#sobremim">Sobre mim</a></li>
+    <li><a href="#peripecias">Peripécias</a></li>
+    <li><a href="#ratata">Ratata</a></li>
+</ul>
+
+<h2 id="sobremim">Sobre mim</h2>
+grggreubgreubgajifvnoinfóinefuroabnrugbargbad
+çjrbgarugbarrgubargbuarougbarubgúrbgRUOBGrobg
+nOJNFRGNFDJKLGNDJGBDKÇJGBDÇJKSBÇKJBFUBGIGUBJG
+BGJGBDOGSBGTÓBGOSBNOSBongtlkngfokhnfoshnfoihn
+sfóhnshiponsóhinsfgobnsfogbnsfogbnkiklglkglil
+grggreubgreubgajifvnoinfóinefuroabnrugbargbad
+çjrbgarugbarrgubargbuarougbarubgúrbgRUOBGrobg
+nOJNFRGNFDJKLGNDJGBDKÇJGBDÇJKSBÇKJBFUBGIGUBJG
+BGJGBDOGSBGTÓBGOSBNOSBongtlkngfokhnfoshnfoihn
+sfóhnshiponsóhinsfgobnsfogbnsfogbnkiklglkglil
+grggreubgreubgajifvnoinfóinefuroabnrugbargbad
+çjrbgarugbarrgubargbuarougbarubgúrbgRUOBGrobg
+nOJNFRGNFDJKLGNDJGBDKÇJGBDÇJKSBÇKJBFUBGIGUBJG
+BGJGBDOGSBGTÓBGOSBNOSBongtlkngfokhnfoshnfoihn
+sfóhnshiponsóhinsfgobnsfogbnsfogbnkiklglkglil
+grggreubgreubgajifvnoinfóinefuroabnrugbargbad
+çjrbgarugbarrgubargbuarougbarubgúrbgRUOBGrobg
+nOJNFRGNFDJKLGNDJGBDKÇJGBDÇJKSBÇKJBFUBGIGUBJG
+BGJGBDOGSBGTÓBGOSBNOSBongtlkngfokhnfoshnfoihn
+sfóhnshiponsóhinsfgobnsfogbnsfogbnkiklglkglil
+grggreubgreubgajifvnoinfóinefuroabnrugbargbad
+çjrbgarugbarrgubargbuarougbarubgúrbgRUOBGrobg
+nOJNFRGNFDJKLGNDJGBDKÇJGBDÇJKSBÇKJBFUBGIGUBJG
+BGJGBDOGSBGTÓBGOSBNOSBongtlkngfokhnfoshnfoihn
+sfóhnshiponsóhinsfgobnsfogbnsfogbnkiklglkglil
+<h2 id="peripecias">Peripécias</h2>
+<!-- pra testar só dar mais espaço entre eles-->
+<h2 id="ratata">Ratata</h2>
+
+<!-- colocando o "#" e identificando o ID
+    pode se fazer a pesquisa por fragmentos da 
+    página, indo de tópico em tópico-->
+<!-- tudo pode ser colocado dentro da tag "a"
+    sendo assim subentendido como um link-->
+<!-- (../) dentro do "a" serve para direcionar 
+    para outra pasta, mesmo sendo em outro 
+    arquivo-->
+    
+outro <a href="../teste/ratata.html">projeto</a>
+
+
