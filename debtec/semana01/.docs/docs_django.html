@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estudo Explicado de Python Django</title>
+    <link rel="stylesheet" href="https://unpkg.com/phosphor-icons@1.4.0/dist/phosphor.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #e0e0e0;
+            font-family: 'Arial', sans-serif;
+            padding: 20px;
+        }
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            max-width: 900px;
+            width: 100%;
+        }
+        h3, h4 {
+            display: flex;
+            align-items: center;
+            color: #333;
+            margin-bottom: 15px;
+        }
+        h3 .ph, h4 .ph {
+            margin-right: 10px;
+            color: #007BFF;
+        }
+        ol, ul {
+            margin-left: 20px;
+            margin-bottom: 15px;
+        }
+        li {
+            margin-bottom: 10px;
+        }
+        pre {
+            background-color: #f4f4f4;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+            margin-bottom: 15px;
+        }
+        code {
+            font-family: 'Consolas', monospace;
+            color: #d63384;
+        }
+        p {
+            margin-bottom: 10px;
+        }
+    </style>
+    
+</head>
+<body>
+    <div class="container">
+        <h3><i class="ph ph-code"></i>Estudo Explicado de Python Django</h3>
+
+        <h4><i class="ph ph-folder-plus"></i>1. Criação do Projeto e Aplicativo Django</h4>
+        <ol>
+            <li><i class="ph ph-terminal"></i><strong>Criar um novo projeto Django:</strong>
+                <pre><code>django-admin startproject setup .</code></pre>
+            </li>
+            <li><i class="ph ph-terminal"></i><strong>Criar um novo aplicativo Django:</strong>
+                <pre><code>python manage.py startapp myapp</code></pre>
+            </li>
+            <li><i class="ph ph-code-simple"></i><strong>Configurar URLs do aplicativo:</strong>
+                <p>No arquivo <code>setup/urls.py</code>, inclua as rotas do aplicativo:</p>
+                <pre><code># setup/urls.py
+
+from django.contrib import admin
+from django.urls import include, path
+
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('myapp/', include('myapp.urls')),
+]</code></pre>
+                <p>No arquivo <code>myapp/urls.py</code>, adicione as rotas do aplicativo:</p>
+                <pre><code># myapp/urls.py
+
+from django.urls import path
+from . import views
+
+urlpatterns = [
+    path('', views.index, name='index'),
+    # Adicione outras rotas aqui
+]</code></pre>
+            </li>
+            <li><i class="ph ph-terminal"></i><strong>Aplicar migrações iniciais:</strong>
+                <pre><code>python manage.py makemigrations
+python manage.py migrate</code></pre>
+            </li>
+        </ol>
+
+        <h4><i class="ph ph-gear"></i>2. Configuração do Ambiente Virtual com <code>virtualenv</code></h4>
+        <ol>
+            <li><i class="ph ph-terminal"></i><strong>Instalar <code>virtualenv</code>:</strong>
+                <pre><code>pip install virtualenv</code></pre>
+            </li>
+            <li><i class="ph ph-terminal"></i><strong>Criar um ambiente virtual:</strong>
+                <p>No diretório raiz do seu projeto, execute:</p>
+                <pre><code>virtualenv .venv</code></pre>
+            </li>
+            <li><i class="ph ph-terminal"></i><strong>Ativar o ambiente virtual:</strong>
+                <ul>
+                    <li>No Windows:
+                        <pre><code>.\\.venv\\Scripts\\activate</code></pre>
+                    </li>
+                    <li>No macOS/Linux:
+                        <pre><code>source .venv/bin/activate</code></pre>
+                    </li>
+                </ul>
+            </li>
+            <li><i class="ph ph-terminal"></i><strong>Instalar Django no ambiente virtual:</strong>
+                <pre><code>pip install django python-dotenv</code></pre>
+            </li>
+        </ol>
+
+        <h4><i class="ph ph-file-plus"></i>3. Uso do dotenv para Variáveis de Ambiente</h4>
+        <ol>
+            <li><i class="ph ph-file-code"></i><strong>Crie um arquivo <code>.env</code> na raiz do seu projeto</strong> e adicione suas variáveis de ambiente:</li>
+            <pre><code>SECRET_KEY=your_secret_key
+DEBUG=True</code></pre>
+            <li><i class="ph ph-file-code"></i><strong>Carregue as variáveis de ambiente no arquivo <code>settings.py</code>:</strong>
+                <pre><code># setup/settings.py
+
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
+
+SECRET_KEY = os.getenv('SECRET_KEY')
+DEBUG = os.getenv('DEBUG', 'False') == 'True'</code></pre>
+            </li>
+        </ol>
+
+        <h4><i class="ph ph-git-branch"></i>4. Configuração do Git</h4>
+        <ol>
+            <li><i class="ph ph-terminal"></i><strong>Inicializar um repositório Git:</strong>
+                <pre><code>git init</code></pre>
+            </li>
+            <li><i class="ph ph-file-code"></i><strong>Criar um arquivo <code>.gitignore</code> na raiz do seu projeto</strong> e adicionar os seguintes conteúdos:</li>
+            <pre><code># .gitignore
+
+# Python
+*.pyc
+__pycache__/
+
+# Django
+db.sqlite3
+*.log
+
+# Virtualenv
+.venv/
+
+# Environment variables
+.env
+
+# Other
+.DS_Store</code></pre>
+            <li><i class="ph ph-terminal"></i><strong>Adicionar arquivos ao repositório:</strong>
+                <pre><code>git add .
+git commit -m "Initial commit"</code></pre>
+            </li>
+            <li><i class="ph ph-terminal"></i><strong>Adicionar um repositório remoto:</strong>
+                <pre><code>git remote add origin [url_https]</code></pre>
+            </li>
+            <li><i class="ph ph-terminal"></i><strong>Enviar o código para o repositório remoto:</strong>
+                <pre><code>git push -u origin master</code></pre>
+            </li>
+        </ol>
+
+        <h4><i class="ph ph-list"></i>Boas Práticas na Escrita de Código Python</h4>
+        <ul>
+            <li><i class="ph ph-book-open"></i><strong>PEP 8:</strong> Siga as convenções de estilo de código Python definidas na PEP 8.
+                <ul>
+                    <li>Use indentação de 4 espaços.</li>
+                    <li>Limite cada linha a um máximo de 79 caracteres.</li>
+                    <li>Use espaços ao redor de operadores e após vírgulas.</li>
+                    <li>Use linhas em branco para separar funções e classes, e grandes blocos de código dentro das funções.</li>
+                </ul>
+            </li>
+            <li><i class="ph ph-user-circle"></i><strong>Nomenclatura:</strong>
+                <ul>
+                    <li>Use nomes descritivos e significativos para variáveis, funções, classes e métodos.</li>
+                    <li>Nomes de classes devem estar em CamelCase.</li>
+                    <li>Nomes de variáveis e funções devem estar em snake_case.</li>
+                </ul>
+            </li>
+            <li><i class="ph ph-clipboard-text"></i><strong>Documentação:</strong>
+                <ul>
+                    <li>Documente suas funções e classes usando docstrings.</li>
+                    <li>Adicione comentários explicativos onde necessário.</li>
+                </ul>
+            </li>
+            <li><i class="ph ph-folder"></i><strong>Organização de Pastas:</strong>
+                <ul>
+                    <li>Separe suas aplicações Django em diretórios distintos dentro do projeto.</li>
+                    <li>Use o diretório <code>static</code> para arquivos estáticos (CSS, JavaScript, imagens) e <code>templates</code> para arquivos de template HTML.</li>
+                </ul>
+            </li>
+        </ul>
+
+        <h4><i class="ph ph-folder-tree"></i>Exemplo de Estrutura de Diretórios de um Projeto Django</h4>
+        <pre><code>setup/
+├── manage.py
+├── setup/
+│   ├── __init__.py
+│   ├── settings.py
+│   ├── urls.py
+│   ├── wsgi.py
+│   ├── asgi.py
+│   └── ...
+├── myapp/
+│   ├── migrations/
+│   ├── static/
+│   │   └── myapp/
+│   │       └── ...
+│   ├── templates/
+│   │   └── myapp/
+│   │       └── ...
+│   ├── __init__.py
+│   ├── admin.py
+│   ├── apps.py
+│   ├── models.py
+│   ├── tests.py
+│   ├── urls.py
+│   └── views.py
+├── .venv/
+└── .env</code></pre>
+
+        <p>Seguindo estas práticas e utilizando os comandos descritos, você estará no caminho certo para desenvolver aplicações web robustas e bem organizadas com Django.</p>
+    </div>
+</body>
+</html>
